@@ -24,6 +24,8 @@ import { ThemeProvider } from "@mui/material";
 import { theme } from "../utils/theme";
 import createEmotionCache from "../utils/createEmotionCache";
 import { CacheProvider } from "@emotion/react";
+import '../public/fonts/fonts.css';
+import Sidebar from '../components/Sidebar.jsx'
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -35,7 +37,9 @@ function App({
  return (
    <CacheProvider value={emotionCache}>
      <ThemeProvider theme={theme}>
+      <Sidebar>
        <Component {...pageProps} />
+       </Sidebar>
      </ThemeProvider>
    </CacheProvider>
  );
