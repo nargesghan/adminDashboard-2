@@ -20,11 +20,59 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import StarBorderPurple500OutlinedIcon from "@mui/icons-material/StarBorderPurple500Outlined";
 import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
+import Image from 'next/image';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
+import { styled,alpha } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
+import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
 
-const drawerWidth = 240;
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: 'primary.main',
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width:'504px',
+  [theme.breakpoints.down('md')]: {
+    width:'400px',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width:'50%',
+  },
+
+
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: theme.palette.primary.main,
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
+    },
+  },
+}));
 
 function ResponsiveDrawer(props) {
   const { window } = props;
@@ -133,10 +181,10 @@ function ResponsiveDrawer(props) {
       position="fixed"
       sx={{
         width: { sm: `calc(100% - ${133}px)` },
-        ml: { sm: `${drawerWidth}px` },
+        ml: { sm: `${134}px` },
       }}
     >
-      <Toolbar>
+      <Toolbar sx={{backgroundColor:'primary.dark'}}>
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -146,9 +194,22 @@ function ResponsiveDrawer(props) {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          Responsive drawer
-        </Typography>
+        <Grid container direction={'row'}justifyContent={'space-between'}>
+        <Search sx={{backgroundColor:'primary.main'}}>
+            <SearchIconWrapper>
+              <SearchIcon sx={{color:'grey.500'}}/>
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search here…"
+              inputProps={{ 'aria-label': 'search' }}
+sx={{color:'grey.400'}}
+            />
+           
+          </Search>
+          <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center', width:'100px'}}><Image src='/images/NotifIcon.svg' width={'15'} height={'17'}></Image ><Avatar sx={{width:'29px',height:'29px'}}/><Image src={'/images/Arrow.svg'} width={'6'} height={'12'}/></Box>
+          
+          </Grid>
+         {/**dddddddddd */}
       </Toolbar>
     </AppBar>
       <Box component="nav" aria-label="mailbox folders">
