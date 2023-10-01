@@ -4,7 +4,8 @@ export const theme = createTheme({
  palette: {
    primary: {
      main: "#21222D",
-     dark:'#171821',
+     dark:'#171821',  
+     light:'#2B2B36',
    },
    secondary:{
     main:'#A9DFD8'
@@ -18,6 +19,18 @@ export const theme = createTheme({
  },
  typography: {
     fontFamily: 'Inter, Arial, sans-serif',
+    h4:{
+      fontWeight: 600,
+            fontSize: "15px",
+            lineHeight: "18px",
+            color: "#FFFFFF",
+    },
+    subtitle1:{
+      fontWeight: 500,
+      fontSize: "10px",
+      lineHeight: "12px",
+      color: "#A0A0A0",
+    }
   },
   shape:{
     borderRadius:8

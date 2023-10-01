@@ -46,27 +46,9 @@ const Summery = () => {
         height: "201px",
       }}
     >
-      <Grid item xs={12} sx={{pl:'20px'}}>
-        <Typography
-          sx={{
-            fontWeight: 600,
-            fontSize: "15px",
-            lineHeight: "18px",
-            color: "#FFFFFF",
-          }}
-        >
-          Today's Sales
-        </Typography>
-        <Typography
-          sx={{
-            fontWeight: 500,
-            fontSize: "10px",
-            lineHeight: "12px",
-            color: "#A0A0A0",
-          }}
-        >
-          Sales Summery
-        </Typography>
+      <Grid item xs={12} sx={{ pl: "20px" }}>
+        <Typography variant="h4">Today's Sales</Typography>
+        <Typography variant="subtitle1">Sales Summery</Typography>
       </Grid>
 
       {SummeryData.map((item) => {

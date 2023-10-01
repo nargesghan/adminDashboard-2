@@ -22,5 +22,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
     "react-svg": "^16.1.26"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.1.0"
   }
 }
